@@ -2,7 +2,7 @@ function init() {
 
     var dropdownMenu = d3.select("#selDataset");
 
-    d3.json("samples.json").then((data) => {
+    d3.json("data/samples.json").then((data) => {
 
         data.names.forEach((i) => {
             dropdownMenu.append("option").text(i).property("value");
@@ -15,7 +15,7 @@ function init() {
 
 function selectPlot(id) {
     
-    d3.json("samples.json").then((data)=> {
+    d3.json("data/samples.json").then((data)=> {
 
         var samples = data.samples.filter(b => b.id == id)[0];
         
@@ -81,7 +81,7 @@ function selectPlot(id) {
     
 function selectDemographics(id) {
 
-    d3.json("samples.json").then((data)=> {
+    d3.json("data/samples.json").then((data)=> {
         
         var metadata = data.metadata.filter(d => d.id == id)[0];
 
